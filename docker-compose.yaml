@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@test-db:5432/${DB_NAME}
+    depends_on:
+      - test-db
+    networks:
+      - app-network
+
+  test-db:
+    image: postgres
+    container_name: test-db
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}:5432
+    networks:
+      - app-network
+    volumes:
+      - .docker/pgdata:/var/lib/postgresql/data
+
+networks:
+  app-network:
+    driver: bridge
