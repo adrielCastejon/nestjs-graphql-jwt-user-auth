@@ -1,6 +1,6 @@
 ## User Auth - Nestjs Graphql
 
-Este projeto é um exemplo de como pode funcionar uma api utilizando[Nestjs](https://github.com/nestjs/nest) e [Graphql](https://graphql.org/). Para melhor experiência de funcionamento ou consumo dela, consultar meu outro repositório front-end que consome [essa api](https://github.com/Colherinhas/Angular-Graphql-Userlogin-Consumer). Este repositório possui um sistema completo de login, CRUD de usuários e também alguns endpoints adicionais de teste para relação de outras tabelas com os usuários, como o de criação de repositórios ou de redes sociais (funcionando como um linktree).
+Este projeto é um exemplo de como pode funcionar uma api utilizando [Nestjs](https://github.com/nestjs/nest) e [Graphql](https://graphql.org/). Para melhor experiência de funcionamento ou consumo dela, consultar meu outro repositório front-end que consome [essa api](https://github.com/Colherinhas/Angular-Graphql-Userlogin-Consumer). Este repositório possui um sistema completo de login, CRUD de usuários e também alguns endpoints adicionais de teste para relação de outras tabelas com os usuários, como o de criação de repositórios ou de redes sociais (funcionando como um linktree).
 
 ## Instalação e execução
 
@@ -51,7 +51,7 @@ $ npx prisma studio
 
 • O código aceita seeders pelo prisma, que podem ser encontrados no diretório `/prisma/seeds` e que podem ser separadamente criados, injetados no arquivo `seed.ts` e corretamente colocados à disposição no banco de dados com o comando `$ npx prisma db seed`.
 
-## Debug Cases
+## Troubleshooting
 
 Caso hajam problemas, deve-se primeiramente localizar o problema.
 • Primeiramente utilize o comando disponibilizado com script `$ npm run main` .
